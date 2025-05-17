@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="static/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.3/lottie.min.js"></script>
+</head>
+<body>
+    <div id="menu">
+        <h1 id="gameOverScore">Game Over - Score: <b>0</b></h1>
+
+        <label>Enter Nickname:</label>
+        <input type="text" id="nickname" placeholder="Your name">
+
+        <div id="recaptchaContainer" class="g-recaptcha" data-sitekey="6LdlVjcrAAAAAMOd9gLwWwnf3HuyX97o6MzP4nK7"></div>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+        <label>Snake Color:</label>
+        <input type="color" id="snakeColor" value="#00FF00">
+
+        <div style="display: flex; width: 100%; gap: 10px; margin-top: 10px;">
+            <div style="flex: 1;">
+                <label>Difficulty:</label>
+                <select id="difficulty">
+                    <option value="120" data-name="easy">Easy</option>
+                    <option value="80" data-name="medium" selected>Medium</option>
+                    <option value="40" data-name="hard">Hard</option>
+                </select>                
+            </div>
+            <div style="flex: 1;">
+                <button onclick="startGame()">Start Game</button>
+            </div>
+        </div>
+
+        <p id="highScore">High Score: 0</p>
+    </div>
+
+    <div id="scoreDisplay">Score: 0</div>
+
+    <div id="winningAnimation" style="width: 300px; height: 300px; margin: 20px auto; display: none;"></div>
+
+    <canvas id="gameCanvas" width="1000" height="800"></canvas>
+
+    <div id="leaderboard">
+        <h2>Top 10</h2>
+        <ul id="topScoresList"></ul>
+    </div>    
+
+    <script src="static/script.js"></script>
+</body>
+</html>

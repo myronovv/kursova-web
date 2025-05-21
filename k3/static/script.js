@@ -274,6 +274,28 @@ function showWinningAnimation() {
     }, 3000);
 }
 
+function deleteScores() {
+    const password = document.getElementById('adminPassword').value;
+    const nickname = document.getElementById('nickname').value || prompt("Enter your nickname:");
+
+    fetch('/delete_scores', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password: password, nickname: nickname })
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert(data.message);
+        if (data.success) {
+            loadTopScores(); // оновити топ після видалення
+        }
+    })
+    .catch(error => {
+        console.error("Error deleting scores:", error);
+    });
+}
+
+
 window.onload = function () {
     loadTopScores();
     loadHighScoreFromServer();

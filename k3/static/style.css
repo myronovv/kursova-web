@@ -102,3 +102,45 @@ canvas {
 #leaderboard li {
     margin-bottom: 5px;
 }
+
+#top-scores-wrapper {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.top-scores {
+    background-color: #111;
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    min-width: 200px;
+}
+
+/* Секція кнопки під списком */
+#delete-section {
+    margin-top: 10px;
+    text-align: center;
+}
+
+#delete-section input[type="password"] {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 80%;
+    margin-bottom: 5px;
+}
+
+#delete-section button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #dc3545;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#delete-section button:hover {
+    background-color: #c82333;
+}

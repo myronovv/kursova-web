@@ -43,10 +43,18 @@
 
     <canvas id="gameCanvas" width="1000" height="800"></canvas>
 
-    <div id="leaderboard">
-        <h2>Top 10</h2>
+    <div id="top-scores-wrapper">
+    <div id="topScores" class="top-scores">
+        <h3>Top 10</h3>
         <ul id="topScoresList"></ul>
-    </div>    
+
+        <!-- Ось нова позиція кнопки -->
+        <div id="delete-section">
+            <input type="password" id="adminPassword" placeholder="Enter admin password">
+            <button onclick="deleteScores()">Delete Scores</button>
+        </div>
+    </div>
+</div>
 
     <script src="static/script.js"></script>
 </body>
